@@ -1,7 +1,7 @@
 class _planets_database:
 
     def __init__(self):
-        self.planets = {}		#{'planet1':{'Mass':1.2,'Type':1,...},'planet2':{'Mass':1.3,'Type':0,...},...}
+        self.planets = {}       #{'planet1':{'Mass':1.2,'Type':1,...},'planet2':{'Mass':1.3,'Type':0,...},...}
     
     # Load information about all planets stro database
     def load_planets(self, planet_file):
@@ -40,8 +40,8 @@ class _planets_database:
     # Get information about single planet
     def get_planet(self, pid):
         if pid in self.planets:
-        	self.planets[pid]['visitors'] = self.planets[pid]['visitors'] + 1
-            return {'mass':self.planets[pid]['mass'], 'radius':self.planets[pid]['radius'], 'period':self.planets[pid]['period'], 'visitors':self.planets[pid]['visitors']}
+            self.planets[pid]['visitors'] = str(int(self.planets[pid]['visitors']) + 1)
+            return {'mass':self.planets[pid]['mass'],'radius':self.planets[pid]['radius'],'period':self.planets[pid]['period'],'visitors':self.planets[pid]['visitors']}
         return None
 
     # Get infomation about all planets in database
@@ -87,4 +87,4 @@ class _planets_database:
 
     # Deletes all entries for planets in databse
     def delete_planets(self):
-    	self.planets = {}
+        self.planets = {}
