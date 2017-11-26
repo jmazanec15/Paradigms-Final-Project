@@ -34,12 +34,14 @@ class _planets_database:
             self.planets[str(planet_array[0])]['hostStarTemperature'] = str(planet_array[22])
             self.planets[str(planet_array[0])]['hostStarAge'] = str(planet_array[23])
             self.planets[str(planet_array[0])]['listsPlanetIsOn'] = str(planet_array[24])
+            self.planets[str(planet_array[0])]['visitors'] = str(0)
         file.close()
 
     # Get information about single planet
     def get_planet(self, pid):
         if pid in self.planets:
-            return {'mass':self.planets[pid]['mass'], 'radius':self.planets[pid]['radius'], 'period':self.planets[pid]['period']}
+        	self.planets[pid]['visitors'] = self.planets[pid]['visitors'] + 1
+            return {'mass':self.planets[pid]['mass'], 'radius':self.planets[pid]['radius'], 'period':self.planets[pid]['period'], 'visitors':self.planets[pid]['visitors']}
         return None
 
     # Get infomation about all planets in database
@@ -77,6 +79,7 @@ class _planets_database:
         self.planets[pid]['hostStarTemperature'] = str(inp[22])
         self.planets[pid]['hostStarAge'] = str(inp[23])
         self.planets[pid]['listsPlanetIsOn'] = str(inp[24])
+        self.planets[pid]['visitors'] = str(inp[25])
 
     # Deletes entry for specified planet in database
     def delete_planet(self, pid):
