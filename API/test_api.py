@@ -48,7 +48,7 @@ class TestPlanetApi(unittest.TestCase):
                 key = 'a4'
 
                 m = {}
-                m['value'] = '1995'
+                m['value'] = '1995                      '
                 r = requests.put(self.DICT_URL + key, data = json.dumps(m))
                 self.assertTrue(self.is_json(r.content.decode()))
                 resp = json.loads(r.content.decode())
