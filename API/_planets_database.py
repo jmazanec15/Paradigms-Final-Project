@@ -1,3 +1,5 @@
+from math import pi
+
 class _planets_database:
 
     def __init__(self):
@@ -88,3 +90,24 @@ class _planets_database:
     # Deletes all entries for planets in databse
     def delete_planets(self):
         self.planets = {}
+
+    def scale_to_earth(self, pid):
+        resp = dict()
+        resp['result'] = 'error'
+        if pid not in self.planets:
+            return resp
+        if self.planets[pid]['radius'] == '':
+            return resp
+
+        radius_jupiter = float(self.planets[pid]['radius'])
+        # 1 convert planet to jupiter radius to planet to earth radius
+        # planet/jupiter 
+        earth_jupiter_radius_ratio = 11.209
+        radius_earth  = radius_jupiter*earth_jupiter_radius_ratio
+        # planet/earth
+        volume_ratio = (4./3.)*pi*(radius_earth)**3
+        return round(volume_ratio, 2)
+
+
+
+
