@@ -1,4 +1,4 @@
-# Paradimgs Final Project
+# Paradigms Final Project
 
 # API usage information
 The idea of our api is to create a database of all discovered exo-planets. In order to do this one must first make an instance of the class and then load the data from a specified file using the function load_planets(). After this the user can get information about a single specified planet or about all the planets in the database at a time (using get_planet() and get_planets() respectively), delete the information about a single speciifed planet or all the planets at a time (using delete_planet() and delete_planets() respecitvely), set the information about a single specified planet (using set_planet()) and get information about the planet scaled in terms of earth (using scale_to_earth()).
@@ -29,4 +29,6 @@ differentiate the different get requests
 The server maps pretty directly to the functions from the API so none of 
 the handler functions are overly complex. 
 
-# It should now describe the total steps for running your entire project code, including steps on how to start the server.
+# Run Project Instructions
+To start the server, navigate to webservice and run main.py and the server will start.
+Then, go to student04.cse.nd.edu/acallah1/guide-to-the-universe/client to access the web client.
