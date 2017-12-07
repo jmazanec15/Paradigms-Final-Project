@@ -41,9 +41,11 @@ class _planets_database:
 
     # Get information about single planet
     def get_planet(self, pid):
+       # if pid in self.planets:
+        #    self.planets[pid]['visitors'] = str(int(self.planets[pid]['visitors']) + 1)
+         #   return {'mass':self.planets[pid]['mass'],'radius':self.planets[pid]['radius'],'period':self.planets[pid]['period'],'visitors':self.planets[pid]['visitors']}
         if pid in self.planets:
-            self.planets[pid]['visitors'] = str(int(self.planets[pid]['visitors']) + 1)
-            return {'mass':self.planets[pid]['mass'],'radius':self.planets[pid]['radius'],'period':self.planets[pid]['period'],'visitors':self.planets[pid]['visitors']}
+            return self.planets[pid]
         return None
 
     # Get infomation about all planets in database
@@ -55,33 +57,39 @@ class _planets_database:
 
     # Set information about a single planet, adds new entry if planet not present in database
     def set_planet(self, pid, inp):
+
+        print("Adding" + pid)
         if pid not in self.planets:
             self.planets[pid] = {}
-        self.planets[pid]['type'] = str(inp[0])
-        self.planets[pid]['mass'] = str(inp[1])
-        self.planets[pid]['radius'] = str(inp[2])
-        self.planets[pid]['period'] = str(inp[3])
-        self.planets[pid]['semiMajorAxis'] = str(inp[4])
-        self.planets[pid]['eccentricity'] = str(inp[5])
-        self.planets[pid]['periastron'] = str(inp[6])
-        self.planets[pid]['longitude'] = str(inp[7])
-        self.planets[pid]['ascendingNode'] = str(inp[8])
-        self.planets[pid]['inclination'] = str(inp[9])
-        self.planets[pid]['surfaceTemperature'] = str(inp[10])
-        self.planets[pid]['age'] = str(inp[11])
-        self.planets[pid]['discoveryMethod'] = str(inp[12])
-        self.planets[pid]['dicoveryYear'] = str(inp[13])
-        self.planets[pid]['lastUpdated'] = str(inp[14])
-        self.planets[pid]['rightAscension'] = str(inp[15])
-        self.planets[pid]['declination'] = str(inp[16])
-        self.planets[pid]['distanceFromSun'] = str(inp[17])
-        self.planets[pid]['hostStarMass'] = str(inp[18])
-        self.planets[pid]['hostStarRadius'] = str(inp[19])
-        self.planets[pid]['hostStarMetallicity'] = str(inp[20])
-        self.planets[pid]['hostStarTemperature'] = str(inp[21])
-        self.planets[pid]['hostStarAge'] = str(inp[22])
-        self.planets[pid]['listsPlanetIsOn'] = str(inp[23])
-        self.planets[pid]['visitors'] = str(inp[24])
+        for key in inp:
+            self.planets[pid][key] = inp[key]
+
+        print(self.planets["Kappa"]);
+        #self.planets[pid]['type'] = str(inp[0])
+        #self.planets[pid]['mass'] = str(inp[1])
+        #self.planets[pid]['radius'] = str(inp[2])
+        #self.planets[pid]['period'] = str(inp[3])
+        #self.planets[pid]['semiMajorAxis'] = str(inp[4])
+        #self.planets[pid]['eccentricity'] = str(inp[5])
+        #self.planets[pid]['periastron'] = str(inp[6])
+        #self.planets[pid]['longitude'] = str(inp[7])
+        #self.planets[pid]['ascendingNode'] = str(inp[8])
+        #self.planets[pid]['inclination'] = str(inp[9])
+        #self.planets[pid]['surfaceTemperature'] = str(inp[10])
+        #self.planets[pid]['age'] = str(inp[11])
+        #self.planets[pid]['discoveryMethod'] = str(inp[12])
+        #self.planets[pid]['dicoveryYear'] = str(inp[13])
+        #self.planets[pid]['lastUpdated'] = str(inp[14])
+        #self.planets[pid]['rightAscension'] = str(inp[15])
+        #self.planets[pid]['declination'] = str(inp[16])
+        #self.planets[pid]['distanceFromSun'] = str(inp[17])
+        #self.planets[pid]['hostStarMass'] = str(inp[18])
+        #self.planets[pid]['hostStarRadius'] = str(inp[19])
+        #self.planets[pid]['hostStarMetallicity'] = str(inp[20])
+        #self.planets[pid]['hostStarTemperature'] = str(inp[21])
+        #self.planets[pid]['hostStarAge'] = str(inp[22])
+        #self.planets[pid]['listsPlanetIsOn'] = str(inp[23])
+        #self.planets[pid]['visitors'] = str(inp[24])
 
     # Deletes entry for specified planet in database
     def delete_planet(self, pid):
@@ -90,6 +98,7 @@ class _planets_database:
     # Deletes all entries for planets in databse
     def delete_planets(self):
         self.planets = {}
+        print("deleted!\n\n\n\n")
 
     def scale_to_earth(self, pid):
         resp = dict()

@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+<meta charset="UTF-8">
+
+	
+</style>
+<!--https://www.tutorialspoint.com/materialdesignlite/materialdesignlite_tabs.htm used as a starting point -->
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<div class = "mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	         <header class = "mdl-layout__header">
+	            <div class = "mdl-layout__header-row mdl-color--green">      
+	               <span class = "mdl-layout-title ">Guide to the Universe</span>          
+	            </div>       
+	         </header>     
+	         
+	         <main class = "mdl-layout__content">    
+	            <div class = "mdl-tabs mdl-js-tabs">
+	               <div class = "mdl-tabs__tab-bar mdl-color--white">
+	                  <a href = "#tab1-panel" class = "mdl-tabs__tab is-active" id="tab1">Browse</a>
+	                  <a href = "#tab2-panel" class = "mdl-tabs__tab" id="tab2">Search</a>
+	                  <a href = "#tab3-panel" class = "mdl-tabs__tab" id="tab3">Add</a>
+	               </div>
+	            
+	               <div class = "mdl-tabs__panel is-active" id = "tab1-panel">
+	                 <div class="mdl-grid" id = "card-grid"> </div>
+	                </div>
+	            
+	               <div class = "mdl-tabs__panel" id = "tab2-panel">
+	                  <form action="#" id = "textBox">
+	                  	<div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+	                  		<input class = "mdl-textfield__input" type = "text" id = "search" > 
+	                  		<label class = "mdl-textfield__label" for = "search">Text...</label>
+	                  	</div>
+	                  	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id ="searchbutton"> Search </button>
+	              	  </form>
+
+	              	  <table class = "mdl-data-table mdl-js-data-table mdl-shadow--2dp" id ="planet-table">
+	              	  	<thead>
+	              	  		<tr>
+	              	  			<th class = "mdl-data-table__cell--non-numeric">Attribute</th>
+	              	  			<th>Value</th>
+	              	  		</tr>
+	              	  	</thead>
+	              	  	<tbody id="planet-table-body">
+	              	  	</tbody>	
+	              	  </table>	
+	               </div>
+	            
+	               <div class = "mdl-tabs__panel" id = "tab3-panel">
+	                   <form action="#" id = "textBox">
+		                  	<div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		                  		<input class = "mdl-textfield__input" type = "text" id = "name" > 
+		                  		<label class = "mdl-textfield__label" for = "name">Name...</label>
+		                  	</div>
+		                  	<div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		                  		<input class = "mdl-textfield__input" type = "text" id = "key" > 
+		                  		<label class = "mdl-textfield__label" for = "key">Key...</label>
+		                  	</div>
+		                  	<div class = "mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+			                  	<input class = "mdl-textfield__input" type = "text" id = "value" > 
+			                  	<label class = "mdl-textfield__label" for = "value">Value...</label>
+		                  	</div>
+	                  		<div>
+	              	   			<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id ="addbutton"> Add </button>
+	              	   			<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id ="submitbutton"> Submit </button>
+	              	  	 	</div>
+		              	  </form>
+
+		              	  <table class = "mdl-data-table mdl-js-data-table mdl-shadow--2dp" id ="add-table">
+		              	  	<thead>
+		              	  		<tr>
+		              	  			<th class = "mdl-data-table__cell--non-numeric">Attribute</th>
+		              	  			<th>Value</th>
+		              	  		</tr>
+		              	  	</thead>
+		              	  	<tbody id="add-table-body">
+		              	  	</tbody>	
+		              	  </table>	
+		               </div>
+	               </div>
+	            </div>
+	         </main>
+	      </div>   
+		<body background="solarsystem.jpg">
+	<body>
+	<script type = "text/javascript" src = "scripts/objects.js"></script>
+	<script type = "text/javascript" src = "scripts/final.js"></script>
+</html>
+
