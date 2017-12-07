@@ -1,0 +1,20 @@
+The port we used was 51020, which was Andrew's assigned port for the 
+other project
+
+We made some changes since the pdf file to the way we are doing the 
+webservice. The slight changes are that we added a reset url and added a 
+scaled url to differentiate the scaled to earth version with the normal 
+version of getting a planet. 
+
+Otherwise we formatted the webservice similarly to the cherrypy project. 
+We decided to make everything within one controller because there is a 
+small enough scope of different features that we feel that they fit 
+naturally together in one file. 
+
+We used a different url for the reset to 
+allow us to make it more intuitive for the user as opposed to using a 
+normal post. We used a different url for the scaled because we have to 
+differentiate the different get requests
+
+The server maps pretty directly to the functions from the API so none of 
+the handler functions are overly complex. 
