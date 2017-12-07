@@ -25,7 +25,7 @@ class _planets_database:
             self.planets[str(planet_array[0])]['surfaceTemperature'] = str(planet_array[11])
             self.planets[str(planet_array[0])]['age'] = str(planet_array[12])
             self.planets[str(planet_array[0])]['discoveryMethod'] = str(planet_array[13])
-            self.planets[str(planet_array[0])]['dicoveryYear'] = str(planet_array[14])
+            self.planets[str(planet_array[0])]['discoveryYear'] = str(planet_array[14])
             self.planets[str(planet_array[0])]['lastUpdated'] = str(planet_array[15])
             self.planets[str(planet_array[0])]['rightAscension'] = str(planet_array[16])
             self.planets[str(planet_array[0])]['declination'] = str(planet_array[17])
@@ -43,7 +43,7 @@ class _planets_database:
     def get_planet(self, pid):
         if pid in self.planets:
             self.planets[pid]['visitors'] = str(int(self.planets[pid]['visitors']) + 1)
-            return {'mass':self.planets[pid]['mass'],'radius':self.planets[pid]['radius'],'period':self.planets[pid]['period'],'visitors':self.planets[pid]['visitors']}
+            return self.planets[pid]
         return None
 
     # Get infomation about all planets in database
