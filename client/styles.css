@@ -1,0 +1,18 @@
+.graybox {
+	background-color:#ddd;
+	height: 256 px;
+	width:  256 px;
+}
+
+.planet-card {
+	width : 100%;
+	height : 100%;
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+.planet-card.mdl-card__title {
+	color: #fff;
+	height: 176px;
+}
